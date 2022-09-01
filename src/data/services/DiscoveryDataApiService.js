@@ -229,7 +229,7 @@ class DiscoveryDataApiService {
 
   static autocompletePerson(text, organizationKeys) {
     const queryString = [`?q=${text}`].concat(organizationKeys);
-    const url = `${discoveryBaseUrl}/search/person_typeahead/${queryString.join('&org=')}`;
+    const url = `${discoveryBaseUrl}/search/person_typeahead${queryString.join('&org=')}`;
     return getAuthenticatedHttpClient().get(url);
   }
 }

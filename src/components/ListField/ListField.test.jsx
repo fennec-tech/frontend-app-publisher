@@ -374,7 +374,7 @@ describe('ListField - Staffers', () => {
   });
 
   it('gets/clears suggestions for autocomplete', (done) => {
-    mockClient.onGet('http://localhost:18381/api/v1/search/person_typeahead/?q=long&org=MITx')
+    mockClient.onGet('http://localhost:18381/api/v1/search/person_typeahead?q=long&org=MITx')
       .replyOnce(200, JSON.stringify(mockAutoCompletePersonResponses.long));
     const component = mount(<ListField {...staffDefaultProps} owners={owners} />);
     component.instance().onSuggestionsFetchRequested({ value: 'long' }).then(() => {
