@@ -111,6 +111,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -119,6 +120,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -142,6 +144,11 @@ exports[`EditCoursePage renders html correctly 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -154,6 +161,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -171,6 +179,7 @@ exports[`EditCoursePage renders html correctly 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -409,6 +418,16 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -437,6 +456,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -514,6 +534,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -530,6 +551,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -624,6 +646,16 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -638,6 +670,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -656,6 +689,7 @@ exports[`EditCoursePage renders page correctly with courseInfo 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -873,6 +907,16 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -901,6 +945,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -934,6 +979,68 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -1261,6 +1368,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -1277,6 +1385,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1371,6 +1480,16 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -1385,6 +1504,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -1403,6 +1523,7 @@ exports[`EditCoursePage renders page correctly with courseInfo and courseOptions
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -1526,6 +1647,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -1534,6 +1656,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -1557,6 +1680,11 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -1569,6 +1697,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -1586,6 +1715,7 @@ exports[`EditCoursePage renders page correctly with courseInfo error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -1826,6 +1956,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             "key": "edX+Test101x",
             "learner_testimonials": null,
             "level_type": "intermediate",
+            "location_restriction": Object {
+              "countries": Array [
+                "AF",
+                "AX",
+              ],
+              "restriction_type": "allowlist",
+              "states": Array [
+                "AL",
+              ],
+            },
             "organization_logo_override_url": "http://image.src.small",
             "organization_short_code_override": "test short code",
             "outcome": "<p>learn</p>",
@@ -1854,6 +1994,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
             ],
             "syllabus_raw": "",
             "title": "Test title",
+            "topics": Array [],
             "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
             "uuid": "00000000-0000-0000-0000-000000000000",
             "video": Object {
@@ -1887,6 +2028,68 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -2282,6 +2485,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         ]
       }
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={
         Object {
@@ -2298,6 +2502,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2392,6 +2597,16 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           },
           "learner_testimonials": null,
           "level_type": "intermediate",
+          "location_restriction": Object {
+            "countries": Array [
+              "AF",
+              "AX",
+            ],
+            "restriction_type": "allowlist",
+            "states": Array [
+              "AL",
+            ],
+          },
           "organization_logo_override_url": "http://image.src.small",
           "organization_short_code_override": "test short code",
           "outcome": "<p>learn</p>",
@@ -2406,6 +2621,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectTertiary": undefined,
           "syllabus_raw": "",
           "title": "Test title",
+          "topics": Array [],
           "type": "8a8f30e1-23ce-4ed3-a361-1325c656b67b",
           "url_slug": undefined,
           "videoSrc": "https://www.video.information/watch?v=cVsQLlk-T0s",
@@ -2424,6 +2640,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
       title="Test title"
       type="8a8f30e1-23ce-4ed3-a361-1325c656b67b"
       uuid="00000000-0000-0000-0000-000000000000"
@@ -2563,6 +2780,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -2571,6 +2789,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -2594,6 +2813,11 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -2606,6 +2830,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -2623,6 +2848,7 @@ exports[`EditCoursePage renders page correctly with courseInfo, courseOptions, a
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -2785,6 +3011,68 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
                       "value": "advanced",
                     },
                   ],
+                },
+                "location_restriction": Object {
+                  "children": Object {
+                    "countries": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Afghanistan",
+                            "value": "AF",
+                          },
+                          Object {
+                            "label": "Åland Islands",
+                            "value": "AX",
+                          },
+                          Object {
+                            "label": "Algeria",
+                            "value": "DZ",
+                          },
+                          Object {
+                            "label": "American Samoa",
+                            "value": "AS",
+                          },
+                          Object {
+                            "label": "Andorra",
+                            "value": "AD",
+                          },
+                        ],
+                      },
+                    },
+                    "restriction_type": Object {
+                      "choices": Array [
+                        "blocklist",
+                        "allowlist",
+                      ],
+                    },
+                    "states": Object {
+                      "child": Object {
+                        "choices": Array [
+                          Object {
+                            "label": "Alabama",
+                            "value": "AL",
+                          },
+                          Object {
+                            "label": "Arizona",
+                            "value": "AZ",
+                          },
+                          Object {
+                            "label": "Arkansas",
+                            "value": "AR",
+                          },
+                          Object {
+                            "label": "California",
+                            "value": "CA",
+                          },
+                          Object {
+                            "label": "Colorado",
+                            "value": "CO",
+                          },
+                        ],
+                      },
+                    },
+                  },
                 },
                 "subjects": Object {
                   "child": Object {
@@ -3052,6 +3340,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3060,6 +3349,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3083,6 +3373,11 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3095,6 +3390,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3112,6 +3408,7 @@ exports[`EditCoursePage renders page correctly with courseOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -3236,6 +3533,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       courseRunOptions={Object {}}
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3244,6 +3542,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3267,6 +3566,11 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3279,6 +3583,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3296,6 +3601,7 @@ exports[`EditCoursePage renders page correctly with courseOptions error 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
@@ -3506,6 +3812,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3514,6 +3821,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3537,6 +3845,11 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3549,6 +3862,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3566,6 +3880,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions 1`] = `
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
   </PageContainer>
 </Fragment>
@@ -3690,6 +4005,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       }
       courseStatuses={Array []}
       courseSubmitInfo={Object {}}
+      courseTags={null}
       editCourse={[Function]}
       entitlement={Object {}}
       fetchCollaboratorOptions={[Function]}
@@ -3698,6 +4014,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
       fetchCourseInfo={[Function]}
       fetchCourseOptions={[Function]}
       fetchCourseRunOptions={[Function]}
+      fetchCourseTagOptions={[Function]}
       fetchOrganizationRoles={[Function]}
       fetchOrganizationUsers={[Function]}
       formValues={[Function]}
@@ -3721,6 +4038,11 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           },
           "learner_testimonials": undefined,
           "level_type": undefined,
+          "location_restriction": Object {
+            "countries": null,
+            "restriction_type": null,
+            "states": null,
+          },
           "organization_logo_override_url": undefined,
           "organization_short_code_override": undefined,
           "outcome": undefined,
@@ -3733,6 +4055,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
           "subjectTertiary": undefined,
           "syllabus_raw": undefined,
           "title": undefined,
+          "topics": undefined,
           "type": undefined,
           "url_slug": undefined,
           "videoSrc": undefined,
@@ -3750,6 +4073,7 @@ exports[`EditCoursePage renders page correctly with courseRunOptions error 1`] =
         }
       }
       removeCourseEditor={[Function]}
+      setCourseTags={[Function]}
     />
     <ForwardRef
       closeLabel="Dismiss"
